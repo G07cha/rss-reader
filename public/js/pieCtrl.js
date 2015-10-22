@@ -15,6 +15,5 @@ app.controller('pieCtrl', function($rootScope, $scope) {
             
             $scope.data = statistics;
         }
-        
     });
 })
