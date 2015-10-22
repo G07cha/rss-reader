@@ -1,0 +1,45 @@
+doctype html
+html(lang="en" ng-app="rssReader")
+  head
+    title RSS reader
+    link(rel="stylesheet" type="text/css" href="styles/index.css")
+    link(rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet" type="text/css" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css")
+    link(rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css")
+    script(src="bower_components/angular/angular.min.js")
+    script(src="bower_components/angular-bootstrap/ui-bootstrap.min.js")
+    script(src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js")
+    script(src="bower_components/angular-cookies/angular-cookies.min.js")
+    script(src="bower_components/Chart.js/Chart.min.js")
+    script(src="bower_components/angular-chart.js/dist/angular-chart.js")
+    script(src="js/main.js")
+    script(src="js/channelsCtrl.js")
+    script(src="js/messagesCtrl.js")
+    script(src="js/pieCtrl.js")
+  body
+    #channels(class = "panel" ng-controller="channelsCtrl")
+      form(ng-submit="addChannel()" class="form-inline")
+        label Add channel:
+        br
+        input(placeholder="name" ng-model="name" required)
+        input(placeholder="url" ng-model="url" required)
+        input(type="submit" style="display:none")
+      uib-tabset(vertical="true" type="pills")
+        uib-tab(ng-repeat="channel in channels" ng-click="selectChannel(channel)")
+          tab-heading(ng-bind="channel.name")
+            span(class="glyphicon glyphicon-remove" ng-click="removeChannel(channel)")
+    #messages(class="panel" ng-controller="messagesCtrl")
+      #message(ng-repeat="message in messages" ng-click="analyzeMessage(message)")
+        h4(ng-bind="message.title")
+        span(ng-bind="message.contentSnippet")
+        br
+        p(class="text-right" ng-bind="message.publishedDate")
+        hr
+    #selected(class="panel" ng-controller="messagesCtrl")
+      label Messages count: 
+        span(ng-bind="messagesCount")
+      br
+      label Authors count: 
+        span(ng-bind="authorsCount")
+    #statistics(class="panel" ng-controller="pieCtrl")
+      canvas(id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels")

@@ -1,0 +1,52 @@
+html, body {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.panel {
+    overflow:auto;
+    float: left;
+    // Border width
+    width: calc(25% - 1px);
+    height: 100%;
+    display: inline-block;
+    border-left: solid 1px black;
+}
+
+form {
+    margin-bottom: 10px;
+    input {
+        margin-left: 5%;
+        width: 40%;
+    }
+}
+
+#channels {
+    * {
+        outline: 0;
+    }
+    li {
+        span {
+            margin-right: 10px;
+            float: right;
+            display: none;
+        }
+        
+        &:hover {
+            span {
+                display: inline-block;
+            }
+        }
+    }
+}

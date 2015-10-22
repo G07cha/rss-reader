@@ -1,0 +1,28 @@
+{
+  "name": "rss-reader",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/G07cha/rss-reader.git"
+  },
+  "author": "g07cha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/G07cha/rss-reader/issues"
+  },
+  "homepage": "https://github.com/G07cha/rss-reader",
+  "dependencies": {
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "request": "^2.65.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4"
+  }
+}
