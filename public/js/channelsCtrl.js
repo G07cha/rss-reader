@@ -12,7 +12,7 @@ app.controller('channelsCtrl', function($scope, $http, $rootScope, $cookies) {
     $scope.removeChannel = function(channel) {
         var index = $scope.channels.indexOf(channel);
         $scope.channels.splice(index, 1);
-        
+        $rootScope.selectedChannel = $scope.channels[0];
         $cookies.putObject(cookie_id, $scope.channels);
     };
     
