@@ -26,7 +26,7 @@ html(lang="en" ng-app="rssReader")
         input(type="submit" style="display:none")
       uib-tabset(vertical="true" type="pills")
         uib-tab(ng-repeat="channel in channels" ng-click="selectChannel(channel)")
-          tab-heading(ng-bind="channel.name")
+          tab-heading {{ channel.name }}
             span(class="glyphicon glyphicon-remove" ng-click="removeChannel(channel)")
     #messages(class="panel" ng-controller="messagesCtrl")
       #message(ng-repeat="message in messages" ng-click="analyzeMessage(message)")
