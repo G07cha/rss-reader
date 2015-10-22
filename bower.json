@@ -1,0 +1,28 @@
+{
+  "name": "rss-reader",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "g07cha"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/G07cha/rss-reader",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.7",
+    "angular-chart.js": "~0.8.5",
+    "angular-bootstrap": "~0.14.2",
+    "angular-cookies": "~1.4.7",
+    "bootstrap": "~3.3.5"
+  }
+}
