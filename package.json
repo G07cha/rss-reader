@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "bower install",
     "start": "node ./app.js"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/G07cha/rss-reader",
   "dependencies": {
+    "bower": "^1.6.3",
     "express": "^4.13.3",
     "jade": "^1.11.0",
     "request": "^2.65.0"
