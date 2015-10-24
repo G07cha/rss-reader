@@ -6,7 +6,7 @@ app.controller('pieCtrl', function($rootScope, $scope) {
     $rootScope.$watch('selectedMessage', function(message) {
         if(message) {
             var letters = message.contentSnippet.toLowerCase().match(/[a-z]/g).join('');
-            var statistics = Array.apply(null, new Array(28)).map(Number.prototype.valueOf, 0);
+            var statistics = Array.apply(null, new Array($scope.labels.length)).map(Number.prototype.valueOf, 0);
             
             for(var i = letters.length - 1; i ; i--) {
                 // 97 is character code for 'a'
